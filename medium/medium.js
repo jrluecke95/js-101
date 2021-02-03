@@ -95,4 +95,58 @@ function leetSpeak(string) {
     return newString;
 }
 
-console.log(leetSpeak('LEEt'))
+// long vowels
+
+function longVowels(string) {
+    const lowString = string.toLowerCase();
+    let newString = '';
+    let i;
+    for (i = 0; i < lowString.length; i++) {
+        if (lowString[i] === lowString[i + 1]) {
+            newString += lowString[i].repeat(5);
+            i++
+        } else {
+            newString += lowString[i];
+        }
+    }
+    return newString;
+}
+
+// just te positives
+
+function onlyPositives(array) {
+    let posArr = [];
+    let i;
+    for (i = 0; i < array.length; i++) {
+        if (array[i] > 0) {
+            posArr.push(array[i]);
+        } else {
+            null;
+        }
+    }
+    return posArr;
+}
+
+// Caeser Cipher 
+
+function cipher(string, shift) {
+    let encodeStr = "";
+    for (letter in string) {
+        if 
+        let newPos = string.charCodeAt(letter) + shift;
+        encodeStr += String.fromCharCode(newPos);
+    }
+    return encodeStr;
+}
+
+function decipher(string, shift) {
+    let decodeStr = "";
+    for (letter in string) {
+        let newPos = string.charCodeAt(letter) - shift;
+        decodeStr += String.fromCharCode(newPos);
+    }
+    return encodeStr;
+}
+
+console.log(cipher("Genius without education is like silver in the mine", 13));
+// console.log(decipher(""))
